@@ -30,8 +30,8 @@ const List = ({
         />
       </Header>
       <div>
-        <Checkbox />
-        <Checkbox />
+        <Checkbox completed />
+        <Checkbox completed />
         <Checkbox />
         <ListItemInput />
       </div>

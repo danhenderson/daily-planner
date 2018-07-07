@@ -1,11 +1,11 @@
 import styled from '../../lib/styled'
 
-export const Root = styled(theme => ({
+export const Root = styled((theme, props) => ({
   display: 'block',
   padding: theme.rhythm(0.5),
   borderRadius: theme.rhythm(2),
-  backgroundColor: theme.colors.shade.background,
-  color: theme.colors.shade.foreground,
+  backgroundColor: theme.colors[props.color].background,
+  color: theme.colors[props.color].foreground,
   transition: theme.transitions.ease,
   cursor: 'pointer',
 
@@ -13,4 +13,4 @@ export const Root = styled(theme => ({
     backgroundColor: theme.colors.reverse.background,
     color: theme.colors.reverse.foreground
   }
-}), 'button')
+}), 'div')

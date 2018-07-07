@@ -11,6 +11,6 @@ export const Root = styled(theme => ({
 
 export const Input = styled(theme => ({
   flex: 1,
-  paddingTop: theme.rhythm(0.5),
-  paddingBottom: theme.rhythm(0.5)
+  paddingTop: theme.rhythm(0.375),
+  paddingBottom: theme.rhythm(0.375)
 }), 'input')

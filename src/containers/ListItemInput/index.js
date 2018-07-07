@@ -7,7 +7,7 @@ class ListItemInput extends Component {
     return (
       <Root>
         <IconButton
-          icon='check'
+          icon='plus'
           size={0.25}
         />
         <Input

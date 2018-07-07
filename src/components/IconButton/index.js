@@ -3,11 +3,14 @@ import { Root } from './styles'
 import Icon from '../Icon'
 
 const IconButton = ({
+  color = 'shade',
   icon,
   onClick,
   rotate
 }) => (
-  <Root onClick={onClick}>
+  <Root
+    color={color}
+    onClick={onClick}>
     <Icon
       name={icon}
       rotate={rotate}
