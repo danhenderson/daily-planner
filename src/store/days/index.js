@@ -18,15 +18,16 @@ export const preprendDay = () => ({
 })
 
 // Helpers
-const createDay = (dayMoment) => ({
-  timestamp: dayMoment.toISOString()
+const createDay = (dayMoment, today) => ({
+  timestamp: dayMoment.toISOString(),
+  default: today
 })
 
 // Reducer
 const today = moment.utc().startOf('day')
 const initialRange = [ -3, -2, -1, 0, 1, 2, 3 ]
 const initialState = initialRange.map(days => (
-  createDay(today.clone().add(days, 'days'))
+  createDay(today.clone().add(days, 'days'), days === 0)
 ))
 
 export default (state = initialState, { type }) => {

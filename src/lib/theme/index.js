@@ -40,7 +40,7 @@ export const fonts = {
 
 export const getFontStyles = (font = 'body') => ({
   fontFamily: fonts[font].family,
-  weight: fonts[font].weight || 400,
+  fontWeight: fonts[font].weight || 400,
   textTransform: fonts[font].trasform || 'none'
 })
 

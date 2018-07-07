@@ -9,6 +9,7 @@ import Box from './components/Box'
 import Container from './components/Container'
 import ErrorBoundary from './containers/ErrorBoundary'
 import Layout from './components/Layout'
+import Lists from './containers/Lists'
 import TagForm from './containers/TagForm'
 import TagList from './containers/TagList'
 
@@ -23,6 +24,7 @@ const App = () => (
             <Layout spacing={1}>
               <TagList />
               <TagForm />
+              <Lists />
             </Layout>
           </Box>
         </Container>
