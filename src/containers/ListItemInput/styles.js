@@ -7,10 +7,13 @@ export const Root = styled(theme => ({
   '& > *': {
     margin: theme.rhythm(0.5)
   }
-}))
+}), 'form')
 
 export const Input = styled(theme => ({
   flex: 1,
   paddingTop: theme.rhythm(0.375),
-  paddingBottom: theme.rhythm(0.375)
+  paddingBottom: theme.rhythm(0.375),
+  '&::placeholder': {
+    opacity: 0.25
+  }
 }), 'input')
