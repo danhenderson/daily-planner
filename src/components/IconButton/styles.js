@@ -13,4 +13,4 @@ export const Root = styled(theme => ({
     backgroundColor: theme.colors.reverse.background,
     color: theme.colors.reverse.foreground
   }
-}))
+}), 'button')
