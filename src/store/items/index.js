@@ -23,6 +23,11 @@ export const editItem = (id, data) => ({
   payload: { id, data }
 })
 
+// Selectors
+export const selectItemsForDay = (state, timestamp) => (
+  state.items.filter(items => items.id === timestamp)
+)
+
 // Reducer
 const initialState = []
 

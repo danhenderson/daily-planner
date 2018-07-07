@@ -12,7 +12,11 @@ class ListItemInput extends Component {
         return (e) => {
           e.preventDefault()
           this.validate()
-            .then(() => window.alert('success'))
+            .then((description) => this.props.onSuccess({
+              description,
+              id: this.props.id
+            }))
+            .then(() => this.inputField.value = '')
             .catch(() => window.alert('failure'))
         }
     }
