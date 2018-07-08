@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import configureStore from './store'
+import store from './store'
 import { ThemeProvider } from 'emotion-theming'
 import * as theme from './lib/theme'
 
@@ -12,8 +12,6 @@ import Layout from './components/Layout'
 import Lists from './containers/Lists'
 import TagForm from './containers/TagForm'
 import TagList from './containers/TagList'
-
-const store = configureStore()
 
 const App = () => (
   <ErrorBoundary>
