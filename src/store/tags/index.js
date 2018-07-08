@@ -27,11 +27,7 @@ export const selectTagNames = state => (
 )
 
 // Reducer
-const initialState = {
-  foo: { name: 'organisation' },
-  bar: { name: 'health' },
-  baz: { name: 'relaxation' }
-}
+const initialState = {}
 
 export default (state = initialState, { type, payload }) => {
   switch (type) {
