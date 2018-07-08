@@ -4,7 +4,8 @@ import uuid from 'uuid/v1'
 const c = {
   ADD: 'app/items/ADD',
   DELETE: 'app/items/DELETE',
-  EDIT: 'app/items/EDIT'
+  EDIT: 'app/items/EDIT',
+  TOGGLE: 'app/items/TOGGLE'
 }
 
 // Action Handlers
@@ -23,9 +24,14 @@ export const editItem = (id, data) => ({
   payload: { id, data }
 })
 
+export const toggleItem = id => ({
+  type: c.TOGGLE,
+  payload: { id }
+})
+
 // Selectors
 export const selectItemsForDay = (state, timestamp) => (
-  state.items.filter(items => items.id === timestamp)
+  state.items.filter(items => items.timestamp === timestamp)
 )
 
 // Reducer
@@ -40,6 +46,12 @@ export default (state = initialState, { type, payload }) => {
         item => item.id !== payload.id
           ? item
           : Object.assign({}, item, payload.data)
+      )
+    case c.TOGGLE:
+      return state.map(
+        item => item.id !== payload.id
+          ? item
+          : Object.assign({}, item, { complete: !item.complete })
       )
     case c.DELETE:
       return state.filter(

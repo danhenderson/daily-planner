@@ -14,7 +14,7 @@ class ListItemInput extends Component {
           this.validate()
             .then((description) => this.props.onSuccess({
               description,
-              id: this.props.id
+              timestamp: this.props.timestamp
             }))
             .then(() => this.inputField.value = '')
             .catch(() => window.alert('failure'))
@@ -23,7 +23,7 @@ class ListItemInput extends Component {
   }
 
   validate () {
-    const value = this.inputField.value.toLowerCase()
+    const value = this.inputField.value
     const validations = [ validators.required() ]
     const validation = validate(validations, value)
 

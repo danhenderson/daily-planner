@@ -3,16 +3,19 @@ import { Root, Label } from './styles'
 import IconButton from '../IconButton'
 
 const Checkbox = ({
-  completed
+  complete,
+  description,
+  onToggle
 }) => (
   <Root>
     <IconButton
-      color={completed ? 'success' : 'danger'}
-      icon={completed ? 'check' : 'close'}
+      color={complete ? 'success' : 'danger'}
+      icon={complete ? 'check' : 'close'}
+      onClick={onToggle}
       size={0.25}
     />
     <Label>
-      Lorem ipsum sidium espor
+      {description}
     </Label>
   </Root>
 )

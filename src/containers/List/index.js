@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addItem, selectItemsForDay } from '../../store/items'
+import { addItem, toggleItem, selectItemsForDay } from '../../store/items'
 import { formatTimestamp } from '../../lib/dates'
 
 import { Root, Header } from './styles'
@@ -15,7 +15,8 @@ const List = ({
   items,
   onNext,
   onPrevious,
-  timestamp
+  timestamp,
+  toggleItem
 }) => (
   <Root>
     <Layout spacing={1}>
@@ -34,15 +35,18 @@ const List = ({
         />
       </Header>
       <div>
-        {items.map((item, index) => (
+        {items.map(item => (
           <Checkbox
-            completed
-            key={index}
+            complete={item.complete}
+            description={item.description}
+            key={item.id}
+            id={item.id}
+            onToggle={() => toggleItem(item.id)}
           />
         ))}
         <ListItemInput
-          id={timestamp}
           onSuccess={addItem}
+          timestamp={timestamp}
         />
       </div>
     </Layout>
@@ -53,6 +57,6 @@ const mapStateToProps = (state, props) => ({
   items: selectItemsForDay(state, props.timestamp)
 })
 
-const mapDispatchToProps = { addItem }
+const mapDispatchToProps = { addItem, toggleItem }
 
 export default connect(mapStateToProps, mapDispatchToProps)(List)
