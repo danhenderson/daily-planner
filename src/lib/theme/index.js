@@ -41,7 +41,8 @@ export const fonts = {
 export const getFontStyles = (font = 'body') => ({
   fontFamily: fonts[font].family,
   fontWeight: fonts[font].weight || 400,
-  textTransform: fonts[font].trasform || 'none'
+  textTransform: fonts[font].trasform || 'none',
+  lineHeight: 1.5
 })
 
 // Sizes
