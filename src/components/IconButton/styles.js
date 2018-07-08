@@ -1,7 +1,7 @@
 import styled from '../../lib/styled'
 
 export const Root = styled((theme, props) => ({
-  display: 'block',
+  display: 'inline-block',
   padding: theme.rhythm(0.5),
   borderRadius: theme.rhythm(2),
   backgroundColor: theme.colors[props.color].background,

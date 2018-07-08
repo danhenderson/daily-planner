@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import findIndex from 'lodash/findIndex'
 import { connect } from 'react-redux'
-
 import List from '../List'
 import Swipe from 'react-swipe'
 

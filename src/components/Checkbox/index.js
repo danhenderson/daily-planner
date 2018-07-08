@@ -1,10 +1,12 @@
 import React from 'react'
 import { Root, Label } from './styles'
+import ContextualMenu from '../ContextualMenu'
 import IconButton from '../IconButton'
 
 const Checkbox = ({
   complete,
   description,
+  onDelete,
   onToggle
 }) => (
   <Root>
@@ -17,6 +19,16 @@ const Checkbox = ({
     <Label>
       {description}
     </Label>
+    <ContextualMenu
+      title={description}
+      items={[
+        {
+          label: 'Delete',
+          icon: 'bin',
+          onClick: onDelete
+        }
+      ]}
+    />
   </Root>
 )
 

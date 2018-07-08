@@ -7,6 +7,10 @@ export const Root = styled(theme => ({
 
   '& > *': {
     margin: theme.rhythm(0.5)
+  },
+
+  '& > *:last-child': {
+    marginLeft: 'auto'
   }
 }))
 
