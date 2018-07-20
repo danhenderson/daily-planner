@@ -2,6 +2,7 @@ import styled from '../../lib/styled'
 
 export const Root = styled(theme => ({
   display: 'flex',
+  alignItems: 'center',
   margin: theme.rhythm(-0.5),
 
   '& > *': {
