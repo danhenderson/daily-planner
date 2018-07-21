@@ -12,5 +12,9 @@ export const Root = styled((theme, props) => ({
   '&:hover': {
     backgroundColor: theme.colors.reverse.background,
     color: theme.colors.reverse.foreground
+  },
+
+  '& div': {
+    pointerEvents: 'none'
   }
 }), 'div')

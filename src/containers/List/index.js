@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addItem, deleteItem, toggleItem, selectItemsForDay } from '../../store/items'
+import { addItem, toggleItem, selectItemsForDay } from '../../store/items'
 import { formatTimestamp } from '../../lib/dates'
 
 import { Root, Header } from './styles'
@@ -12,7 +12,6 @@ import ListItemInput from '../ListItemInput'
 
 const List = ({
   addItem,
-  deleteItem,
   items,
   onNext,
   onPrevious,
@@ -20,7 +19,7 @@ const List = ({
   toggleItem
 }) => (
   <Root>
-    <Layout spacing={[ 1, 0, 1, 0 ]}>
+    <Layout spacing={1}>
       <Header>
         <IconButton
           icon='chevron'
@@ -42,7 +41,6 @@ const List = ({
             description={item.description}
             key={item.id}
             id={item.id}
-            onDelete={() => deleteItem(item.id)}
             onToggle={() => toggleItem(item.id)}
           />
         ))}
@@ -59,6 +57,6 @@ const mapStateToProps = (state, props) => ({
   items: selectItemsForDay(state, props.timestamp)
 })
 
-const mapDispatchToProps = { addItem, deleteItem, toggleItem }
+const mapDispatchToProps = { addItem, toggleItem }
 
 export default connect(mapStateToProps, mapDispatchToProps)(List)

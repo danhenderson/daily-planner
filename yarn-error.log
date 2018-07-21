@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/dan.henderson/.nvm/versions/node/v8.6.0/bin/node /Users/dan.henderson/.nvm/versions/node/v8.6.0/bin/yarn build:prod
+  /Users/dan.henderson/.nvm/versions/node/v8.6.0/bin/node /Users/dan.henderson/.nvm/versions/node/v8.6.0/bin/yarn deploy:stagine
 
 PATH: 
   /Users/dan.henderson/.nvm/versions/node/v8.6.0/bin:/Users/dan.henderson/Repos/plain-services-docker/bin:/usr/local/opt/imagemagick@6/bin:./bin:/usr/local/bin:/usr/local/sbin:/Users/dan.henderson/Repos/dotfiles/bin:/Users/dan.henderson/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/Ghostscript/bin:/opt/ImageMagick/bin
@@ -23,7 +23,7 @@ npm manifest:
       "start": "parcel src/index.html",
       "build": "rm -rf dist && parcel build src/index.html --public-url $BASE_PATH",
       "build:staging": "BASE_PATH=/daily-planner yarn build",
-      "build:prod": "yarn build",
+      "build:prod": "BASE_PATH=/ yarn build",
       "deploy:staging": "gh-pages -d dist"
     },
     "babel": {
@@ -2410,17 +2410,14 @@ Lockfile:
       yargs-parser "^5.0.0"
 
 Trace: 
-  Error: Command failed.
-  Exit code: 1
-  Command: sh
-  Arguments: -c yarn build
-  Directory: /Users/dan.henderson/Repos/tutorials/daily-todo
-  Output:
-  
-      at ProcessTermError.MessageError (/Users/dan.henderson/.nvm/versions/node/v8.6.0/lib/node_modules/yarn/lib/cli.js:186:110)
-      at new ProcessTermError (/Users/dan.henderson/.nvm/versions/node/v8.6.0/lib/node_modules/yarn/lib/cli.js:226:113)
-      at ChildProcess.<anonymous> (/Users/dan.henderson/.nvm/versions/node/v8.6.0/lib/node_modules/yarn/lib/cli.js:30281:17)
-      at emitTwo (events.js:125:13)
-      at ChildProcess.emit (events.js:213:7)
-      at maybeClose (internal/child_process.js:927:16)
-      at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+  Error: Command "deploy:stagine" not found. Did you mean "deploy:staging"?
+      at new MessageError (/Users/dan.henderson/.nvm/versions/node/v8.6.0/lib/node_modules/yarn/lib/cli.js:186:110)
+      at /Users/dan.henderson/.nvm/versions/node/v8.6.0/lib/node_modules/yarn/lib/cli.js:87307:17
+      at Generator.next (<anonymous>)
+      at step (/Users/dan.henderson/.nvm/versions/node/v8.6.0/lib/node_modules/yarn/lib/cli.js:98:30)
+      at /Users/dan.henderson/.nvm/versions/node/v8.6.0/lib/node_modules/yarn/lib/cli.js:116:14
+      at Promise (<anonymous>)
+      at F (/Users/dan.henderson/.nvm/versions/node/v8.6.0/lib/node_modules/yarn/lib/cli.js:23451:28)
+      at /Users/dan.henderson/.nvm/versions/node/v8.6.0/lib/node_modules/yarn/lib/cli.js:95:12
+      at runCommand (/Users/dan.henderson/.nvm/versions/node/v8.6.0/lib/node_modules/yarn/lib/cli.js:87312:22)
+      at Object.<anonymous> (/Users/dan.henderson/.nvm/versions/node/v8.6.0/lib/node_modules/yarn/lib/cli.js:87412:14)

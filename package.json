@@ -6,7 +6,7 @@
   "scripts": {
     "start": "parcel src/index.html",
     "build": "rm -rf dist && parcel build src/index.html --public-url $BASE_PATH",
-    "build:staging": "BASE_PATH=/daily-planner yarn build",
+    "build:staging": "BASE_PATH=/daily-planner/ yarn build",
     "build:prod": "BASE_PATH=/ yarn build",
     "deploy:staging": "gh-pages -d dist"
   },
