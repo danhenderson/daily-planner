@@ -7,7 +7,7 @@ export const Root = styled(theme => ({
 export const Header = styled(theme => ({
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'center',
+  justifyContent: 'space-between',
   margin: theme.rhythm(-1),
 
   '& > *': {
