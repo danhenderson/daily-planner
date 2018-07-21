@@ -20,9 +20,9 @@ const App = () => (
         <Container maxWidth={20}>
           <Box spacing={1}>
             <Layout spacing={1}>
+              <Lists />
               <TagList />
               <TagForm />
-              <Lists />
             </Layout>
           </Box>
         </Container>
